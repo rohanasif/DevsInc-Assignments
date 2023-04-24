@@ -48,5 +48,17 @@ const person = {
 }
 
 function printPerson(obj) {
-    console.log(`My name is ${obj.name}. My age is ${obj.age}. My occupation is ${obj.occupation}.`)
+    return `My name is ${obj.name}. My age is ${obj.age}. My occupation is ${obj.occupation}.`
+}
+
+// Q6. Create a class called Person with properties for name, age, and occupation. Write a method in the Person class called printInfo that returns a sentence with their name, age, and occupation.
+class Person {
+    constructor(name, age, occupation) {
+        this.name = name;
+        this.age = age;
+        this.occupation = occupation;
+    }
+    printInfo() {
+        return `My name is ${this.name}. My age is ${this.age}. My occupation is ${this.occupation}.`
+    }
 }
