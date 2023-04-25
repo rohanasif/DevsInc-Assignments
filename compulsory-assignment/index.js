@@ -62,3 +62,22 @@ class Person {
         return `My name is ${this.name}. My age is ${this.age}. My occupation is ${this.occupation}.`
     }
 }
+
+// Q7. Create a class called Circle with a property for radius. Write a method in the Circle class called getArea that returns the area of the circle.Create an instance of the Circle class and call the getArea method.
+class Circle {
+    constructor(radius) {
+        this.radius = radius;
+    }
+    getArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Q8. Use the spread operator to copy an array into a new array, modify the new array, and then print both arrays to the console.
+const arr3 = [1, 2, 3];
+const newarr3 = [...arr3, 4, 5, 6];
+console.log(arr3, newarr3);
+
+// Q9. Use the destructuring assignment syntax to extract the properties of an object into variables and then print out the variables
+const {name, age, occupation} = person;
+console.log(name, age, occupation);
