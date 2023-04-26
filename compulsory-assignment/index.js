@@ -25,16 +25,16 @@ function calculator(a, b, opr) {
     switch (opr) {
         case "+":
             return a + b;
-            break;
+
         case "-":
             return a - b;
-            break;
+
         case "*":
             return a * b;
-            break;
+
         case "/":
             return a / b;
-            break;
+
         default:
             return "Invalid operator";
     }
@@ -79,5 +79,5 @@ const newarr3 = [...arr3, 4, 5, 6];
 console.log(arr3, newarr3);
 
 // Q9. Use the destructuring assignment syntax to extract the properties of an object into variables and then print out the variables
-const {name, age, occupation} = person;
+const { name, age, occupation } = person;
 console.log(name, age, occupation);
