@@ -1,0 +1,299 @@
+/* Reset default styles and set global styles */
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+  color: #4e4e4e;
+  box-sizing: border-box;
+}
+
+/* -------------------Body styling----------------------------- */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ----------------------NavBar styling------------------------- */
+
+/* Style the navigation bar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #8088ff;
+}
+
+/* Style the main heading */
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Style the inputs div */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Style the searchbar div */
+.searchbar {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 999px;
+  font-size: 1.5rem;
+  border: none;
+  box-shadow: 2px 2px 10px 2px #e7fff7;
+}
+
+/* Style the search field */
+input[type=text] {
+  font-size: 1.5rem;
+  border: none;
+}
+
+/* Remove the default focus outline on search field */
+input[type=text]:focus {
+  outline: none;
+}
+
+/* Override the autofill background color in chrome or other browsers */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  padding: 10px;
+  border-radius: 999px;
+  border: 1px solid;
+  color: white;
+  background-color: #8088ff;
+  font-size: 16px;
+  transition-duration: 0.5s;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  background-color: #6c76ff;
+  transition-duration: 0.5s;
+}
+
+input[type=submit]:active {
+  background-color: #3946ff;
+  transition-duration: 0.5s;
+}
+
+/* Style the radio buttons */
+.radio-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* Style the labels for radio buttons */
+.radio-btn>label {
+  color: white;
+}
+
+
+/* Media queries for nav responsive design */
+@media screen and (max-width: 720px) {
+  nav {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  input[type=text] {
+    font-size: 1rem;
+  }
+
+  input[type=submit] {
+    font-size: 12px;
+  }
+
+  .radio-label {
+    font-size: 10px;
+  }
+
+  .radio-btns {
+    justify-content: center;
+  }
+
+  .searchbar {
+    padding: 5px;
+  }
+}
+
+/* ----------------------------Main section styling--------------------------- */
+
+/* Style the main content section */
+section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 40px;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Style each card in the content section */
+.card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 250px;
+  box-shadow: 2px 2px 10px #8088ff;
+  transition-duration: 0.5s;
+}
+
+/* Style the hover effect on each card */
+.card:hover {
+  cursor: pointer;
+  background-color: #8088ff;
+  transition-duration: 0.5s;
+}
+
+/* Style the images in each card */
+img {
+  width: 100%;
+  height: fit-content;
+}
+
+/* Style the title in each card */
+.title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Style the release date in each card */
+.date {
+  font-weight: 700;
+}
+
+/* Style the rating in each card */
+.rating {
+  font-weight: 700;
+}
+
+/* Style the overlay div */
+.overlay {
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the detail view for each card */
+.detail {
+  z-index: 2;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  width: 60vw;
+  flex-direction: column;
+  box-shadow: 2px 2px 10px #8088ff;
+  border-radius: 1rem;
+  position: fixed;
+  background-color: #e7fff7;
+  max-height: 100vh;
+}
+
+
+/* Style the movie details */
+.detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+/* Hide the scrollbar but still scroll */
+.detail-text::-webkit-scrollbar {
+  display: none;
+}
+
+/* Style the div containing the close button */
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Style the close button */
+button {
+  font-size: large;
+  font-weight: 700;
+  min-height: 40px;
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 999px;
+  background-color: #b5ffff;
+  transition-duration: 0.5s;
+}
+
+/* Style the hover effect on the close button */
+button:hover {
+  color: white;
+  background-color: aqua;
+  transition-duration: 0.5s;
+}
+
+/* Style the active effect on the close button */
+button:active {
+  background-color: rgb(0, 126, 126);
+  transition-duration: 0.5s;
+}
+
+/* Style the list of cast */
+.cast-ul {
+  display: flex;
+  row-gap: 8px;
+  column-gap: 20px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+/* Style the footer */
+footer {
+  display: flex;
+  padding-left: 40px;
+  align-items: center;
+  margin-top: auto;
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 7vh;
+}
+
+/* Style the footer text */
+footer>span {
+  font-size: large;
+  color: azure;
+}
+
+
+@media screen and (max-width:600px) {
+  .detail {
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}
