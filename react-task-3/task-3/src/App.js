@@ -1,5 +1,5 @@
 
-import './App.css';
+import Text from "./Text.js"
 import { useState, useRef } from 'react';
 
 
@@ -13,7 +13,10 @@ function App() {
     btnRef.current.style.backgroundColor = "red";
   }
 
-  return <button onClick={toggleFlag} ref={btnRef} text={`Flag is ${flag}`}>ClickME</button>;
+  return <>
+    <button onClick={toggleFlag} ref={btnRef} text={`Flag is ${flag}`}>ClickME</button>
+    <Text />
+  </>;
 }
 
 export default App;
