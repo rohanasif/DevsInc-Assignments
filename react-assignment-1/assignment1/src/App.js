@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputForm from './InputForm';
 import ListItem from './ListItem';
+import './App.css';
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -18,7 +19,7 @@ function App() {
   ));
 
   return (
-    <div>
+    <div className='container'>
       <InputForm onSubmit={addTodo} />
       <ul>{todoItems}</ul>
     </div>
