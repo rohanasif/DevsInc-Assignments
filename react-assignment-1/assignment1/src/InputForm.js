@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-function InputForm(props) {
+function InputForm({onSubmit}) {
     const [text, setText] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        props.onSubmit(text);
+        onSubmit(text);
         setText("");
     }
 

@@ -4,6 +4,8 @@ import ListItem from './ListItem';
 import './App.css';
 
 function App() {
+
+
   const [todos, setTodos] = useState([]);
 
   const addTodo = (text) => {
@@ -13,9 +15,9 @@ function App() {
     };
     setTodos([...todos, newTodo]);
   }
-
-  const todoItems = todos.map(todo => (
-    <ListItem key={todo.id} text={todo.text} />
+ 
+  const todoItems = todos.map((todo, i) => (
+    <ListItem key={todo.id} text={todo.text} index={i} />
   ));
 
   return (
