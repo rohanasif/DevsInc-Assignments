@@ -1,43 +1,45 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function App() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [age, setAge] = useState('');
-  const [gender, setGender] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
   const [subscribe, setSubscribe] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (age > 200) {
-      alert('Invalid age');
-    } else if (email === '' || password === '') {
-      alert('Please enter email and password');
+      alert("Invalid age");
+    } else if (email === "" || password === "") {
+      alert("Please enter email and password");
     } else {
-      alert("You are subscribed");
+      if (subscribe) {
+        alert("You are subscribed");
+      }
     }
   };
 
   const handleInputChange = (event) => {
     const { name, value, type, checked } = event.target;
-    if (type === 'checkbox') {
+    if (type === "checkbox") {
       setSubscribe(checked);
     } else {
       switch (name) {
-        case 'name':
+        case "name":
           setName(value);
           break;
-        case 'email':
+        case "email":
           setEmail(value);
           break;
-        case 'password':
+        case "password":
           setPassword(value);
           break;
-        case 'age':
+        case "age":
           setAge(value);
           break;
-        case 'gender':
+        case "gender":
           setGender(value);
           break;
         default:
@@ -50,19 +52,39 @@ export default function App() {
     <form onSubmit={handleSubmit}>
       <label>
         Name:
-        <input type="text" name="name" value={name} onChange={handleInputChange} />
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleInputChange}
+        />
       </label>
       <label>
         Email:
-        <input type="email" name="email" value={email} onChange={handleInputChange} />
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleInputChange}
+        />
       </label>
       <label>
         Password:
-        <input type="password" name="password" value={password} onChange={handleInputChange} />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleInputChange}
+        />
       </label>
       <label>
         Age:
-        <input type="number" name="age" value={age} onChange={handleInputChange} />
+        <input
+          type="number"
+          name="age"
+          value={age}
+          onChange={handleInputChange}
+        />
       </label>
       <label>
         Gender:
@@ -75,7 +97,12 @@ export default function App() {
       </label>
       <label>
         Subscribe to email list:
-        <input type="checkbox" name="subscribe" checked={subscribe} onChange={handleInputChange} />
+        <input
+          type="checkbox"
+          name="subscribe"
+          checked={subscribe}
+          onChange={handleInputChange}
+        />
       </label>
       <button type="submit">Submit</button>
     </form>
